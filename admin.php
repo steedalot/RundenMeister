@@ -11,13 +11,17 @@ if (file_exists($configFilePath)) {
     exit;
 }
 
-$_REQUEST = json_decode(file_get_contents('php://input'), true);
-if ($_REQUEST) {
-    if ($_REQUEST['key'] != $config['admin_key']) {
+if ($_GET) {
+    if ($_GET['key'] != $config['admin_key']) {
         http_response_code(405);
         echo "🚨 Ungültiger Schlüssel.";
         exit;
     }
+}
+else {
+    http_response_code(405);
+    echo "🚨 Ungültige Anfrage.";
+    exit;
 }
 
 ?>
@@ -54,16 +58,17 @@ if ($_REQUEST) {
             </p>
             <p>
                 <label>Passwort der Datenbank</label>
-                <input type="password" name="db_pass">
+                <input type="password" name="db_password">
             </p>
             <p>
                 <label>Email-Adresse des Administrators</label>
                 <input type="email" name="admin_email" value="<?php echo $config['admin_email']; ?>">
             </p>
             <p>
-                <label>Schlüssel des Administrators</label>
+                <label>Schlüssel für den Zugriff auf diese Seite</label>
                 <input type="text" name="admin_pass" value="<?php echo $config['admin_key']; ?>">
-            <button type="submit" id="submit_button">Testen</button>
+            </p>
+            <button type="submit" id="test_button">Testen</button>
             <button type="submit" id="save_button">Speichern</button>
         </form>
     </main>
