@@ -8,23 +8,23 @@ Die API verwendet JSON für die Kommunikation. Alle Anfragen müssen als POST-Re
 
 ### Runde hinzufügen
 
-*Anfrage*
+__Anfrage__
 
 Um eine Runde hinzuzufügen, senden Sie eine POST-Anfrage an die API mit folgendem JSON-Body:
 
 ```json
 {
-    "action": "add_lap",
-    "runner_id": "RUNNER_ID",
-    "type": "lap"
+    "action": *"add_lap"*,
+    "runner_id": *"runner_id"*,
+    "type": *"lap"*
 }
 ```
 
-* action: Muss immer "add_lap" sein.
-* runner_id: Die eindeutige ID des Läufers.
-* type: Der Typ der Runde, kann "start", "lap" oder "finish" sein.
+* *action*: Muss immer "add_lap" sein.
+* *runner_id*: Die eindeutige ID des Läufers.
+* *type*: Der Typ der Runde, kann "start", "lap" oder "finish" sein.
 
-*Antwort*
+__Antwort__
 
 * Bei Erfolg: Die ID der hinzugefügten Runde.
 * Bei Fehler: Eine Fehlermeldung, z.B. "🚨 Die Runde wurde zu früh hinzugefügt.".
@@ -35,8 +35,8 @@ Um alle erfassten Runden für einen Läufer bzw. eine Läuferin anzuzeigen, nutz
 
 ```json
 {
-    "action": "get_laps",
-    "runner_id": "RUNNER_ID"
+    "action": *"get_laps"*,
+    "runner_id": *"RUNNER_ID"*
 }
 ```
 
