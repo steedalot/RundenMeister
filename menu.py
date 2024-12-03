@@ -6,10 +6,10 @@ url = "https://lauf.phoenixgymnasium.de"
 
 def print_menu():
     print("\n=== RundenMeister Menu ===")
-    print("1. Set Runner ID")
-    print("2. Add New Lap")
-    print("3. Show All Laps")
-    print("4. Exit")
+    print("1. Läufer-ID festlegen")
+    print("2. Neue Runde hinzufügen")
+    print("3. Alle Runden anzeigen")
+    print("4. Beenden")
 
 def add_lap(runner_id):
     data = {
@@ -59,7 +59,7 @@ def main():
         choice = input("\nWähle eine Option (1-4): ")
         
         if choice == "1":
-            runner_id = input("Gib deine Läufer-ID ein: ")
+            runner_id = input("Gib die Läufer-ID ein: ")
         elif choice == "2":
             if runner_id:
                 add_lap(runner_id)
