@@ -1,2 +1,7 @@
+<Files "config.json">
+    Order allow,deny
+    Deny from all
+</Files>
+
 RewriteEngine On
 RewriteRule ^([0-9]+)$ index.php?id=$1 [L,QSA]

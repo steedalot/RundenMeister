@@ -66,11 +66,18 @@ else {
             </p>
             <p>
                 <label>Schlüssel für den Zugriff auf diese Seite</label>
-                <input type="text" name="admin_pass" value="<?php echo $config['admin_key']; ?>">
+                <input type="text" name="admin_key" value="<?php echo $config['admin_key']; ?>">
             </p>
-            <button type="submit" id="test_button">Testen</button>
-            <button type="submit" id="save_button">Speichern</button>
+            <p>
+                <label>Schlüssel für den Lehrerzugriff</label>
+                <input type="text" name="teacher_key" value="<?php echo $config['teacher_key']; ?>">
+            </p>
+            <button id="test_button">Testen</button>
+            <button id="save_button">Speichern</button>
         </form>
     </main>
 
+    <script>const SCOPE = "admin";</script>
+    <script>const ADMINKEY = "<?php echo $_GET['key']; ?>";</script>
+    <script src="code.js"></script>
 </body>

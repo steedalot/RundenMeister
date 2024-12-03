@@ -46,6 +46,7 @@ else {
         <p class="notice" id="scan_result">Code scannen</p>
 
     </main>
+    <script>const SCOPE = "input";</script>
     <script src="html5-qrcode.min.js" type="text/javascript"></script>
     <script src="code.js" type="text/javascript"></script>
 </body>
