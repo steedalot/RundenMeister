@@ -21,7 +21,7 @@ Um eine Runde hinzuzufügen, senden Sie eine POST-Anfrage an die API mit folgend
 ```
 
 * *action*: Muss immer "add_lap" sein.
-* *RUNNER_ID*: Die eindeutige ID des Läufers.
+* *RUNNER_ID*: Die eindeutige ID des Läufers. Die Datenbank passt sich an die Länge an.
 * *type*: Der Typ der Runde, kann "start", "lap" oder "finish" sein.
 
 __Antwort__
