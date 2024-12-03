@@ -59,8 +59,8 @@ if (isset($data->action)) {
     }
 }
 else {
-    $answer = "🚨 Keine Aktion angegeben";
-    $status = 400;
+    $status = 303;
+    $answer = "<!DOCTYPE html>\n<html>\n<head>\n<meta http-equiv=\"Refresh\" content=\"0; URL='https://github.com/steedalot/rundenmeister'\">\n</head>\n<body></body>\n</html>";
 }
 
 R::close();
