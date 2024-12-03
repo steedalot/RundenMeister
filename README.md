@@ -18,6 +18,7 @@ Um eine Runde hinzuzufügen, senden Sie eine POST-Anfrage an die API mit folgend
     "runner_id": "RUNNER_ID",
     "type": "lap"
 }
+```
 
 * action: Muss immer "add_lap" sein.
 * runner_id: Die eindeutige ID des Läufers.
@@ -37,3 +38,9 @@ Um alle erfassten Runden für einen Läufer bzw. eine Läuferin anzuzeigen, nutz
     "action": "get_laps",
     "runner_id": "RUNNER_ID"
 }
+```
+
+*Antwort*
+
+* Bei Erfolg: Eine Liste mit allen Daten zu allen Runden
+* Bei Fehler: Eine Fehlermeldung, z.B. "🚨 Keine gelaufenen Runden gefunden."

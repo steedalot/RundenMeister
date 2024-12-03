@@ -47,6 +47,11 @@ if (isset($data->action)) {
         case "get_laps":
                 
                 $laps = R::find("lap", "runner_id = '".$data->runner_id."' ORDER BY timestamp ASC");
+                if (!$laps) {
+                    $answer = "🚨 Keine gelaufenen Runden gefunden.";
+                    $status = 404;
+                    break;
+                }
                 $answer = json_encode(R::exportAll($laps));
                 $status = 200;
     
